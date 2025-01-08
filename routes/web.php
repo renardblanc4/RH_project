@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RHController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
+    return view('welcome');
+    
+    
+});*/
+
+//Route::resource('employes', RHController::class);
+
+Route::get('/', [RHController::class, 'index']);
+
+Route::get('/ajout', function () {
     return view('form_ajout');
 });
